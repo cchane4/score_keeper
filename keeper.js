@@ -15,6 +15,7 @@ if (!game_over){
   p1_score++; 
 if (p1_score === winning_score){ 
     game_over = true; 
+    p1_score_display.classList.add("winner"); 
 }
  p1_score_display.textContent = p1_score; 
 } 
@@ -26,6 +27,8 @@ player_2.addEventListener("click", function(){
         p2_score++; 
       if (p2_score === winning_score){ 
           game_over = true; 
+          p2_score_display.classList.add("winner"); 
+
       }
        p2_score_display.textContent = p2_score; 
       } 
