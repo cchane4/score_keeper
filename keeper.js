@@ -1,6 +1,7 @@
 
 let player_1 = document.getElementById("p1"); 
 let player_2 = document.getElementById("p2"); 
+let reset = document.getElementById("reset"); 
 let p1_score = 0; 
 let p2_score = 0; 
 let p1_score_display = document.querySelector("#p1_score_display"); 
@@ -34,3 +35,16 @@ player_2.addEventListener("click", function(){
       } 
       }); 
       
+      reset.addEventListener("click", function(){ 
+        p1_score = 0; 
+        p2_score = 0; 
+        p1_score_display.textContent = 0; 
+        p2_score_display.textContent = 0;
+        p1_score_display.classList.remove("winner"); 
+        p2_score_display.classList.remove("winner");
+        game_over= false;  
+         
+
+
+
+      })
