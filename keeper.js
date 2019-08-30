@@ -8,7 +8,8 @@ let p1_score_display = document.querySelector("#p1_score_display");
 let p2_score_display = document.querySelector("#p2_score_display"); 
 let game_over = false; 
 let winning_score = 5; 
-
+let num_input = document.querySelector('input'); 
+let winning_score_display = document.querySelector('p span'); 
 
 
 player_1.addEventListener("click", function(){ 
@@ -35,16 +36,24 @@ player_2.addEventListener("click", function(){
       } 
       }); 
       
-      reset.addEventListener("click", function(){ 
+       reset.addEventListener("click", function(){ 
+         reset_all();  
+       }); 
+
+
+
+      num_input.addEventListener("change", function(){ 
+        winning_score_display.textContent = this.value; 
+        winning_score = Number(this.value); 
+        reset_all();  
+      }); 
+
+      function reset_all () {
         p1_score = 0; 
         p2_score = 0; 
         p1_score_display.textContent = 0; 
         p2_score_display.textContent = 0;
         p1_score_display.classList.remove("winner"); 
-        p2_score_display.classList.remove("winner");
-        game_over= false;  
-         
-
-
-
-      })
+        p2_score_display.classList.remove("winner"); 
+        game_over = false; 
+      }
